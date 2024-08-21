@@ -1,8 +1,8 @@
 {
     "rewrites":[
       {
-        "source": "/api/:path*",
-        "destination": "https://fitass-server.vercel.app/api/:path*"
+        "source": "/api/fitass/(.*)",
+        "destination": "https://fitass-server.vercel.app/api/fitass/$1"
       },
       {
         "source": "/(.*)",

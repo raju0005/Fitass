@@ -22,10 +22,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 
-app.use('/api/users',userRoutes)
-app.use('/api/steps',stepRoutes)
-app.use('/api/activities',activityRoutes)
-app.use('/api/leaderboard',leaderBoardRoutes)
+app.use('/api/fitass/users',userRoutes)
+app.use('/api/fitass/steps',stepRoutes)
+app.use('/api/fitass/activities',activityRoutes)
+app.use('/api/fitass/leaderboard',leaderBoardRoutes)
 
 app.listen(port , ()=>{
     console.log(`successfully running on ${port}`)

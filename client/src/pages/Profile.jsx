@@ -22,7 +22,12 @@ const Profile = () => {
     isLoading: stepsLoading,
   } = useGetTotalstepsQuery(userInfo._id);
 
-  if (profileLoading || stepsLoading) return <div>Loading...</div>;
+  if (profileLoading || stepsLoading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (profileError)
     return <div>Error fetching profile data: {profileError.message}</div>;
   if (stepsError)
@@ -44,11 +49,11 @@ const Profile = () => {
   return (
     <div className="px-2 h-[85vh] w-full flex justify-center gap-[50px] items-center uppercase relative ">
       <div className="w-[300px] md:hidden flex absolute">
-      <img
-            src={getAvatar()}
-            alt="User Avatar"
-            className="object-fill rounded-full "
-          />
+        <img
+          src={getAvatar()}
+          alt="User Avatar"
+          className="object-fill rounded-full "
+        />
       </div>
       <div className="text-white flex flex-col justify-center items-center px-8 border border-white rounded-lg bg-black/20  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
         <div className="flex flex-col justify-center items-center gap-3 m-7">
@@ -56,16 +61,19 @@ const Profile = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-6 ">
           <h2 className="text-[25px] ">
-            Age: <span className="mx-6 font-custom">{profile?.age || "N/A"}</span>
+            Age:{" "}
+            <span className="mx-6 font-custom">{profile?.age || "N/A"}</span>
           </h2>
           <h2 className="text-[25px]">
             Gender: <span className="mx-6">{profile?.gender || "N/A"}</span>
           </h2>
           <h2 className="text-[25px]">
-            Weight: <span className="mx-6 font-custom">{profile?.weight || "N/A"}</span>
+            Weight:{" "}
+            <span className="mx-6 font-custom">{profile?.weight || "N/A"}</span>
           </h2>
           <h2 className="text-[25px]">
-            Step Goal: <span className="mx-6 font-custom">{totalStepsCount}</span>
+            Step Goal:{" "}
+            <span className="mx-6 font-custom">{totalStepsCount}</span>
           </h2>
 
           <button
@@ -77,11 +85,11 @@ const Profile = () => {
         </div>
       </div>
       <div className="w-[300px] md:flex hidden">
-      <img
-            src={getAvatar()}
-            alt="User Avatar"
-            className="object-fill rounded-full "
-          />
+        <img
+          src={getAvatar()}
+          alt="User Avatar"
+          className="object-fill rounded-full "
+        />
       </div>
     </div>
   );

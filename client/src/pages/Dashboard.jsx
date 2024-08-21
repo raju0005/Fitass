@@ -12,6 +12,7 @@ import {
 import PieChart from "../components/PieChart";
 import Score from "../components/Score";
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Dashboard = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -40,11 +41,16 @@ const Dashboard = () => {
     refetchActivities();
   }, []);
 
-  if (stepsLoading || activitiesLoading) return <div>Loading...</div>;
+  if (stepsLoading || activitiesLoading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (stepsError)
-    return <div>Error fetching steps data: {stepsError.message}</div>;
+    return <div className="text-white">Error fetching steps data: {stepsError.message}</div>;
   if (activitiesError)
-    return <div>Error fetching activities: {activitiesError.message}</div>;
+    return <div className="text-white">Error fetching activities: {activitiesError.message}</div>;
 
   const totalSteps = Steps?.TotalSteps || 0;
   const stepsDone = Steps?.stepsDone || 0;

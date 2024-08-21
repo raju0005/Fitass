@@ -1,8 +1,9 @@
 import React from "react";
+import './Loader.css'
 
 const Loader = () => {
   return (
-    <div className="animate-spin rounded-full h-16 w-16 border-pink-500 border-opacity-50"></div>
+    <div className="loader"></div>
   );
 };
 

@@ -1,8 +1,8 @@
 {
-    "rewrites": [
+    "rewrites":[
       {
-        "source": "/api/ben10/(.*)",
-        "destination": "https://ben-10-server.vercel.app/api/ben10/$1"
+        "source": "/api/:path*",
+        "destination": "https://fitass-server.vercel.app/api/:path*"
       },
       {
         "source": "/(.*)",
@@ -10,3 +10,4 @@
       }
     ]
   }
+  

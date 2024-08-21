@@ -25,13 +25,7 @@ const AddActivity = () => {
     <div className="w-full h-[85vh] text-white flex flex-col justify-center items-center px-8 gap-3">
       <h1 className="text-[40px] md:text-[50px] m-7 uppercase text-center">Add Activity</h1>
       <div className="flex flex-col justify-center items-center gap-7">
-        <input
-          type="text"
-          value={activityName}
-          onChange={(e) => setActivityName(e.target.value)}
-          placeholder="Activity Name"
-          className="text-white font-custom w-[250px] bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 px-5 py-5 rounded border border-white text-[20px]"
-        />
+        
         <select
           value={activityType}
           onChange={(e) => setActivityType(e.target.value)}
@@ -42,6 +36,13 @@ const AddActivity = () => {
           <option value="Cardio">Cardio</option>
           <option value="Cardio">Sports</option>
         </select>
+        <input
+          type="text"
+          value={activityName}
+          onChange={(e) => setActivityName(e.target.value)}
+          placeholder="Activity Name"
+          className="text-white font-custom w-[250px] bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 px-5 py-5 rounded border border-white text-[20px]"
+        />
         <input
           type="text"
           value={activityDuration}

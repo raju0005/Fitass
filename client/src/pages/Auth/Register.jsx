@@ -107,7 +107,7 @@ const Register = () => {
               </label>
               <select
                 id="gender"
-                className="w-full p-2 border rounded text-white bg-transparent bg-clip-padding backdrop-filter backdrop-blur-sm font-custom"
+                className="w-full p-2 border rounded text-black bg-transparent bg-clip-padding backdrop-filter backdrop-blur-sm font-custom"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >

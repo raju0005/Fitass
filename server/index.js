@@ -30,3 +30,6 @@ app.use('/api/leaderboard',leaderBoardRoutes)
 app.listen(port , ()=>{
     console.log(`successfully running on ${port}`)
 })
+export default function handler(req, res) {
+    app(req, res);
+  }

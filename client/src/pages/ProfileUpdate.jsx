@@ -6,9 +6,11 @@ import { useTotalstepsMutation } from "../redux/apis/stepSlice"; // Correct impo
 import { setWeight } from "../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import usePageTitle from "../components/usePageTitle";
 
 const ProfileUpdate = () => {
   const { userInfo } = useSelector((state) => state.auth);
+  usePageTitle("Update Your Profile");
   const dispatch = useDispatch();
 
   const [updateUser] = useUpdateUserMutation();

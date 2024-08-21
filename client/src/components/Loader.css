@@ -1,60 +1,134 @@
-
 .loader {
-  width: 60px;
-  aspect-ratio: 1;
-  color: #000;
-  border: 10px solid;
-  box-sizing: border-box;
-  border-radius: 50%;
-  animation: l6 2s infinite linear;
-  position: relative;
-}
-.loader:before {
-  content: "";
-  position: absolute;
-  height: 20px;
-  inset: auto calc(50% - 10px) 100%;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(currentColor 0 0) top/100% 30%,
-    linear-gradient(currentColor 0 0) top/50% 100%;
-  background-repeat: no-repeat;
-}
-.loader:after {
-  content: "";
-  position: absolute;
-  inset: -8px -10px auto;
-  height: 15px;
-  background: radial-gradient(farthest-side, currentColor 94%, #0000) left,
-    radial-gradient(farthest-side, currentColor 94%, #0000) right;
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-}
-@keyframes l6 {
-  0% {
-    background: conic-gradient(#77a4bd 0, #0000 0);
+    width: 8em;
+    height: 8em;
   }
-  12.5% {
-    background: conic-gradient(#77a4bd 45deg, #0000 46deg);
+  
+  .loader__eye1,
+    .loader__eye2,
+    .loader__mouth1,
+    .loader__mouth2 {
+    animation: eye1 3s ease-in-out infinite;
   }
-  25% {
-    background: conic-gradient(#77a4bd 90deg, #0000 91deg);
+  
+  .loader__eye1,
+    .loader__eye2 {
+    transform-origin: 64px 64px;
   }
-  37.5% {
-    background: conic-gradient(#77a4bd 135deg, #0000 136deg);
+  
+  .loader__eye2 {
+    animation-name: eye2;
   }
-  50% {
-    background: conic-gradient(#77a4bd 180deg, #0000 181deg);
+  
+  .loader__mouth1 {
+    animation-name: mouth1;
   }
-  62.5% {
-    background: conic-gradient(#77a4bd 225deg, #0000 226deg);
+  
+  .loader__mouth2 {
+    animation-name: mouth2;
+    visibility: hidden;
   }
-  75% {
-    background: conic-gradient(#77a4bd 270deg, #0000 271deg);
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: hsl(var(--hue), 90%, 10%);
+      --fg: hsl(var(--hue), 90%, 90%);
+    }
   }
-  87.5% {
-    background: conic-gradient(#77a4bd 315deg, #0000 316deg);
+  
+  @keyframes eye1 {
+    from {
+      transform: rotate(-260deg) translate(0, -56px);
+    }
+  
+    50%,
+      60% {
+      animation-timing-function: cubic-bezier(0.17, 0, 0.58, 1);
+      transform: rotate(-40deg) translate(0, -56px) scale(1);
+    }
+  
+    to {
+      transform: rotate(225deg) translate(0, -56px) scale(0.35);
+    }
   }
-  100% {
-    background: conic-gradient(#77a4bd 360deg, #0000 360deg);
+  
+  @keyframes eye2 {
+    from {
+      transform: rotate(-260deg) translate(0, -56px);
+    }
+  
+    50% {
+      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+    }
+  
+    52.5% {
+      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1, 0);
+    }
+  
+    55%,
+      70% {
+      animation-timing-function: cubic-bezier(0, 0, 0.28, 1);
+      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+    }
+  
+    to {
+      transform: rotate(150deg) translate(0, -56px) scale(0.4);
+    }
   }
-}
+  
+  @keyframes eyeBlink {
+    from,
+      25%,
+      75%,
+      to {
+      transform: scaleY(1);
+    }
+  
+    50% {
+      transform: scaleY(0);
+    }
+  }
+  
+  @keyframes mouth1 {
+    from {
+      animation-timing-function: ease-in;
+      stroke-dasharray: 0 351.86;
+      stroke-dashoffset: 0;
+    }
+  
+    25% {
+      animation-timing-function: ease-out;
+      stroke-dasharray: 175.93 351.86;
+      stroke-dashoffset: 0;
+    }
+  
+    50% {
+      animation-timing-function: steps(1, start);
+      stroke-dasharray: 175.93 351.86;
+      stroke-dashoffset: -175.93;
+      visibility: visible;
+    }
+  
+    75%,
+      to {
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes mouth2 {
+    from {
+      animation-timing-function: steps(1, end);
+      visibility: hidden;
+    }
+  
+    50% {
+      animation-timing-function: ease-in-out;
+      visibility: visible;
+      stroke-dashoffset: 0;
+    }
+  
+    to {
+      stroke-dashoffset: -351.86;
+    }
+  }
+  
+  

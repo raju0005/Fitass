@@ -6,11 +6,12 @@ import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
 import loginlogo from "../../assets/LoginLogo.png";
+import usePageTitle from "../../components/usePageTitle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  usePageTitle("Login");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -7,8 +7,10 @@ import { useRegisterMutation } from "../../redux/apis/userApiSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import registerlogo from "../../assets/RegisterLogo.png";
+import usePageTitle from "../../components/usePageTitle";
 
 const Register = () => {
+  usePageTitle("Register");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

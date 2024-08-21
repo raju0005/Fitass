@@ -8,7 +8,7 @@ const Score = ({ stepsDone = 0, stepGoal = 1, activeMinutes = 0 }) => {
 
     const calculatePoints = (stepsDone, stepGoal, activeMinutes) => {
         if (isNaN(stepsDone) || isNaN(stepGoal) || isNaN(activeMinutes) || stepGoal === 0) {
-            return 0; // Handle invalid input values
+            return 0; 
         }
         const stepPoints = Math.min((stepsDone / stepGoal) * 100, 100);
         const activeMinutesPoints = activeMinutes * 2;

@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { LuArrowBigRight } from "react-icons/lu";
+import usePageTitle from "../components/usePageTitle";
 
 const Welcome = () => {
   const navigate = useNavigate();
+  usePageTitle("Welcome to Fit Ass");
   return (
     <div className="w-full h-[85vh] flex justify-center flex-col items-center gap-4">
       <h1 className="text-white uppercase text-[60px]">Fit Ass</h1>

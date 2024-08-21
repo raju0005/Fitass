@@ -7,9 +7,12 @@ import { useGetTotalstepsQuery } from "../redux/apis/stepSlice";
 import maleAvatar from "../assets/maleAvatar.png";
 import femaleAvatar from "../assets/femaleAvatar.png";
 import otherAvatar from "../assets/otherAvatar.png";
+import Loader from "../components/Loader";
+import usePageTitle from "../components/usePageTitle";
 
 const Profile = () => {
   const { userInfo } = useSelector((state) => state.auth);
+  usePageTitle("Profile");
   const navigate = useNavigate();
   const {
     data: profile,
@@ -29,9 +32,9 @@ const Profile = () => {
       </div>
     );
   if (profileError)
-    return <div>Error fetching profile data: {profileError.message}</div>;
+    return <div className="text-white font-custom">Error fetching profile data: {profileError.message}</div>;
   if (stepsError)
-    return <div>Error fetching steps data: {stepsError.message}</div>;
+    return <div className="text-white font-custom">Error fetching steps data: {stepsError.message}</div>;
 
   const totalStepsCount = totalSteps?.TotalSteps || 0;
 

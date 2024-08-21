@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     
     proxy: {
-      "/api/fitass": "https://fitass-server.vercel.app/",
+      "/api/fitass": "https://fitass-server.vercel.app",
     }
   }
 })

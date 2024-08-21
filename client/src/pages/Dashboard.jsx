@@ -126,7 +126,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-        <div className="text-white flex flex-col justify-center gap-2 items-center px-8 mt-2">
+        <div className="text-white flex flex-col justify-center gap-2 items-center  mt-2">
           <h2 className="text-[30px]">Activity</h2>
           <button
             className="bg-blue-800 hover:bg-blue-700 text-white text-[20px] px-3 py-2 rounded uppercase m-5 hover:scale-110 transform transition-transform cursor-pointer"

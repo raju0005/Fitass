@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Black Block round";
+  src: url("./assets/Black Block Round.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KnightWarrior";
+  src: url("./assets/KnightWarrior-w16n8.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roblox";
+  src: url("./assets/Roblox.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RetroGaming";
+  src: url("./assets/RetroGaming.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Stone Punk Regular";
+  src: url("./assets/stone-punk.regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AlegreyaSansSC";
+  src: url("./assets/AlegreyaSansSC-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body::-webkit-scrollbar {
+  display: none;
+}

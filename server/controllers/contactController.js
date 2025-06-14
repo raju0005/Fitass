@@ -14,9 +14,9 @@ const submitContactForm = asyncHandler(async (req, res) => {
       await newMessage.save();
 
       await resend.emails.send({
-        from: "raajeshande@gmail.com", // use a verified sender
+        from: "onboarding@resend.dev", // use a verified sender
         to: "anderajesh15@gmail.com",
-        subject: "New Contact Form Submission",
+        subject: "Someone contacted you from your website",
         html: `
         <h2>New Contact Received</h2>
         <p><strong>Name:</strong> ${username}</p>
@@ -25,19 +25,7 @@ const submitContactForm = asyncHandler(async (req, res) => {
         <blockquote>${message}</blockquote>
       `,
       });
-      await resend.emails.send({
-        from: "raajeshande@gmail.com",
-        to: email,
-        subject: "Thanks for contacting us!",
-        html: `
-        <p>Hi <strong>${username}</strong>,</p>
-        <p>Thank you for reaching out. We've received your message and will get back to you soon.</p>
-        <hr />
-        <p><strong>Your Message:</strong></p>
-        <blockquote>${message}</blockquote>
-        <p>Regards,<br/>Rajesh Ande</p>
-      `,
-      });
+      
 
       res
         .status(200)

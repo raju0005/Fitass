@@ -1,7 +1,10 @@
 import { Resend } from "resend";
-import asyncHandler from "../middlewares/asyncHandler";
+import dotenv from "dotenv";
+import asyncHandler from "../middlewares/asyncHandler.js";
+dotenv.config();
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 const submitContactForm = asyncHandler(async (req, res) => {
   if (req.method !== "POST") {

@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import asyncHandler from "../middlewares/asyncHandler.js";
 dotenv.config();
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_bMDN8xrE_JW8s82qhrGJUXS3QuLwZUM5w");
 
 
 const submitContactForm = asyncHandler(async (req, res) => {

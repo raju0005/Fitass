@@ -16,7 +16,7 @@ const submitContactForm = asyncHandler(async (req, res) => {
   try {
     await resend.emails.send({
       from: "Rajesh <onboarding@resend.dev>",
-      to: process.env.ADMIN_EMAIL,
+      to: "raajeshande@gmail.com",
       subject: "New Contact via Portfolio 💌",
       html: `
        <div style="background-color: #111; color: #39FF14; font-family: 'Courier New', monospace; padding: 30px; border: 2px solid #39FF14; border-radius: 8px; max-width: 600px; margin: auto;">

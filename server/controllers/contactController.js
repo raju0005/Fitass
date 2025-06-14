@@ -1,8 +1,9 @@
 import { Resend } from "resend";
+import asyncHandler from "../middlewares/asyncHandler";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req, res) {
+const submitContactForm = asyncHandler(async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -48,12 +49,11 @@ export default async function handler(req, res) {
       .json({ success: true, message: "Email sent to admin" });
   } catch (error) {
     console.error("Resend error:", error);
-    return res
-      .status(500)
-      .json({
-        success: false,
-        message: "Failed to send email",
-        error: error.message,
-      });
+    return res.status(500).json({
+      success: false,
+      message: "Failed to send email",
+      error: error.message,
+    });
   }
-}
+});
+export { submitContactForm };

@@ -11,7 +11,6 @@ import stepRoutes from './routes/stepRoutes.js'
 import activityRoutes from './routes/activityRoutes.js'
 import leaderBoardRoutes from './routes/leaderBoardRoutes.js'
 import contactRoutes from './routes/contactRoutes.js'
-import messagesRoutes from './routes/messagesRoutes.js'
 
 dotenv.config()
 const port= process.env.PORT || 5000
@@ -29,7 +28,6 @@ app.use('/api/fitass/steps',stepRoutes)
 app.use('/api/fitass/activities',activityRoutes)
 app.use('/api/fitass/leaderboard',leaderBoardRoutes)
 app.use('/api/fitass/contact',contactRoutes)
-app.use('/api/fitass/rajesh',messagesRoutes)
 
 
 app.listen(port , ()=>{
